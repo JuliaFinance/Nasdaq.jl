@@ -1,0 +1,18 @@
+name = "Nasdaq"
+desc = "Stock tickers for the Nasdaq exchange"
+authors = ["Eric Forgy <Eric.Forgy@cavalre.com>", "ScottPJones <scottjones@alum.mit.edu>"]
+keywords = ["Finance", "Stock", "Exchange"]
+license = "MIT"
+uuid = "08289ebe-4f94-4684-bd36-cc7eb224a188"
+version = "0.1.0"
+
+[deps]
+Assets = "821ac057-2368-47e2-a1d8-2c0798f0e233"
+HTTP   = "cd3eb016-35fb-5094-929b-558a96fad6f3"
+JSON3  = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
