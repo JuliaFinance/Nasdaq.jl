@@ -14,17 +14,17 @@
 [travis-s-img]: https://travis-ci.org/JuliaFinance/Nasdaq.jl.svg
 [travis-m-img]: https://travis-ci.org/JuliaFinance/Nasdaq.jl.svg?branch=master
 
-[app-s-url]:    https://ci.appveyor.com/project/JuliaFinance/assets-jl
-[app-m-url]:    https://ci.appveyor.com/project/JuliaFinance/assets-jl/branch/master
-[app-s-img]:    https://ci.appveyor.com/api/projects/status/2snwo9ea7blvu8jm?svg=true
-[app-m-img]:    https://ci.appveyor.com/api/projects/status/2snwo9ea7blvu8jm/branch/master?svg=true
+[app-s-url]:    https://ci.appveyor.com/project/JuliaFinance/nasdaq-jl
+[app-m-url]:    https://ci.appveyor.com/project/JuliaFinance/nasdaq-jl/branch/master
+[app-s-img]:    https://ci.appveyor.com/api/projects/status/yj5pw4j83b9itur7?svg=true
+[app-m-img]:    https://ci.appveyor.com/api/projects/status/yj5pw4j83b9itur7/branch/master?svg=true
 
 [contrib]:    https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat
 
 [codecov-url]:  https://codecov.io/gh/JuliaFinance/Nasdaq.jl
 [codecov-img]:  https://codecov.io/gh/JuliaFinance/Nasdaq.jl/branch/master/graph/badge.svg
 
-[![][release]][pkg-url] [![][release-date]][pkg-url] [![][license-img]][license-url] [![contributions welcome][contrib]](https://github.com/JuliaFinance/Nasdaq.jl/issues) [![][license-img]][license-url]
+[![][release]][pkg-url] [![][release-date]][pkg-url] [![][license-img]][license-url] [![contributions welcome][contrib]](https://github.com/JuliaFinance/Nasdaq.jl/issues)
 
 | **Info** | **Windows** | **Linux & MacOS** | **Coverage** |
 |:------------------:|:------------------:|:---------------------:|:---------------------:|

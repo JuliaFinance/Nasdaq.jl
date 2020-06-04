@@ -10,9 +10,9 @@ platform:
 
 # # Uncomment the following lines to allow failures on nightly julia
 # # (tests will run but not make your overall status red)
-matrix:
-  allow_failures:
-  - julia_version: nightly
+# matrix:
+#  allow_failures:
+#  - julia_version: nightly
 
 branches:
   only:
@@ -30,6 +30,8 @@ install:
 
 build_script:
   - echo "%JL_BUILD_SCRIPT%"
+  - C:\julia\bin\julia -e "p=joinpath(DEPOT_PATH[1],\"registries\");mkpath(p);using LibGit2;LibGit2.clone(\"https://github.com/JuliaRegistries/General.git\",joinpath(p,\"General\"))"
+  - C:\julia\bin\julia -e "p=joinpath(DEPOT_PATH[1],\"registries\");using LibGit2;LibGit2.clone(\"https://github.com/JuliaFinance/JuliaFinance.git\",joinpath(p,\"JuliaFinance\"))"
   - C:\julia\bin\julia -e "%JL_BUILD_SCRIPT%"
 
 test_script:
