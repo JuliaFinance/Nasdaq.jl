@@ -20,23 +20,24 @@ allpairs() = pairs(_nasdaq_data)
 
 #__init__() = load()
 
-function load(;host="localhost", port=8000, force=false, name="Nasdaq", currency=:USD)
+function load(; host="localhost", port=8000, force=false, name="Nasdaq", symbols=[], currency=:USD)
     exch = lowercase(name)
     jsondir = joinpath(@__DIR__, "..", "data")
-    jsonfile = joinpath(jsondir, exch * ".json")
+    jsonfile = joinpath(jsondir, string(exch,"-",join(symbols,"-"),".json"))
     if !force && isfile(jsonfile)
         body = read(jsonfile)
     else
-        body = HTTP.get("http://$host:$port/api/$exch/list").body
+        body = HTTP.get("http://$host:$port/api/$exch", query=Dict(:symbols => join(symbols,","))).body
         ispath(jsondir) || mkpath(jsondir)
         open(io -> write(io, body), jsonfile, "w")
     end
-    response = JSON3.read(body)
-    exchsym = Symbol(name)
-    for stock in response
-        sym = Symbol(stock.Symbol)
-        _nasdaq_data[sym] = (ListedEquity(exchsym, sym, currency), stock.Description)
+    response = JSON3.read(body, Dict{Symbol,String})
+    exchsym = Symbol(uppercase(name))
+    for key in keys(response)
+        symbol = Symbol(key)
+        _nasdaq_data[symbol] = (ListedEquity(exchsym, symbol, currency), response[symbol])
     end
+    response
 end
 
 end # module Nasdaq
