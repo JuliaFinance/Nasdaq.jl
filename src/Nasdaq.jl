@@ -33,11 +33,13 @@ function load(; host="localhost", port=8000, force=false, name="Nasdaq", symbols
     end
     response = JSON3.read(body, Dict{Symbol,String})
     exchsym = Symbol(uppercase(name))
+    stocks = ListedEquity[]
     for key in keys(response)
         symbol = Symbol(key)
+        push!(stocks, ListedEquity(exchsym, symbol, currency))
         _nasdaq_data[symbol] = (ListedEquity(exchsym, symbol, currency), response[symbol])
     end
-    response
+    stocks
 end
 
 end # module Nasdaq
